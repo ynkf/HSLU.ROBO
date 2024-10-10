@@ -48,11 +48,11 @@ class LineFollower:
     def do_image_processing(self, iteration):
         # image processing is done on the latest image received
         image = self.camera_subscriber.get_image()
-        
+        cv2.imwrite("./images/image-" + str(iteration) + ".jpg", image)
+
         image = image[int(image.shape[0] // 2):image.shape[0] - 100]
 
         rospy.loginfo("image size: " + str(image.shape))
-        # cv2.imwrite("./images/image-" + str(iteration) + ".jpg", image)
 
         image_hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
 
@@ -68,7 +68,7 @@ class LineFollower:
 if __name__ == '__main__':
     lineFollower = LineFollower("alpha")
     x = 0
-    while (x < 300):
+    while (x < 100):
         lineFollower.run(x)
         rospy.sleep(0.2)
         x += 1
