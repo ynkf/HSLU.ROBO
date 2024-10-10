@@ -9,9 +9,6 @@ from std_msgs.msg import Header
 class WheelCommandPublisher:
 
     def __init__(self, robot_name): 
-        # # initialize a node with a name, annonymous=True ensures that the name is unique
-        rospy.init_node('wheel_command_publisher', anonymous=True)
-
         # create a publisher for a topic of type duckietown_msgs.msg.WheelsCmdStamped
         topic = '/' + robot_name + '/wheels_driver_node/wheels_cmd'
         self.publisher = rospy.Publisher(topic, WheelsCmdStamped, queue_size = 10)
@@ -38,5 +35,7 @@ class WheelCommandPublisher:
         self.turn_wheels(0.0, 0.0)
 
 if __name__ == '__main__':
+    # # initialize a node with a name, annonymous=True ensures that the name is unique
+    rospy.init_node('wheel_command_publisher', anonymous=True)
     wcp = WheelCommandPublisher("alpha")
     wcp.run()
