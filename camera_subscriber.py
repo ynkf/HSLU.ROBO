@@ -9,8 +9,8 @@ from sensor_msgs.msg import CompressedImage
 class CameraSubscriber:
     
     def __init__(self, robot_name):
-        # initialize a node with a name, annonymous=True ensures that the name is unique
-        rospy.init_node('camera_listener', anonymous=True)
+        # # initialize a node with a name, annonymous=True ensures that the name is unique
+        # rospy.init_node('camera_listener', anonymous=True)
         # subscribe to a topic of type CompressedImage  
         topic = '/' + robot_name + '/camera_node/image/compressed'
         # when a message is received, the callback is invoked
@@ -26,10 +26,9 @@ class CameraSubscriber:
         rospy.loginfo("Received camera image of type: '%s'" % data.format)
         self.image = data
 
-    def do_image_processing(self):
+    def get_image(self):
         # image processing is done on the latest image received
-        img = self.cv2_bridge.compressed_imgmsg_to_cv2(self.image, "bgr8")
-        rospy.loginfo("Converted image for OpenCV with " + str(img.size) + " pixels")
+        return self.cv2_bridge.compressed_imgmsg_to_cv2(self.image, "bgr8")
 
         
     def run(self):
@@ -38,7 +37,7 @@ class CameraSubscriber:
             self.rate.sleep()
 
 
-if __name__ == '__main__':
-    robot_name = "alpha"
-    cs = CameraSubscriber(robot_name)
-    cs.run()
+# if __name__ == '__main__':
+#     robot_name = "alpha"
+#     cs = CameraSubscriber(robot_name)
+#     cs.run()

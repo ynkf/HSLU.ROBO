@@ -4,6 +4,7 @@ import rospy
 import numpy as np
 import cv2
 from cv_bridge import CvBridge
+from matplotlib import pyplot as plt
 
 from sensor_msgs.msg import CompressedImage, Image
 from duckietown_msgs.msg import WheelsCmdStamped
@@ -57,7 +58,7 @@ class Breitenberg:
         mask = cv2.inRange(image_hsv, yellow_lower_hsv, yellow_upper_hsv)
 
         #  devide the image into a left and a right half
-
+        
         # for each half, sum up the pixels of the mask
   
         default_speed = 0.1
