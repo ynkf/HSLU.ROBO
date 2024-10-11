@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+import time
 import rospy
 import cv2
 from cv_bridge import CvBridge
@@ -32,12 +33,13 @@ class CameraSubscriber:
 
         
     def run(self):
-        while not rospy.is_shutdown():
-            self.do_image_processing()
-            self.rate.sleep()
+        self.do_image_processing()
+        self.rate.sleep()
 
 
-# if __name__ == '__main__':
-#     robot_name = "alpha"
-#     cs = CameraSubscriber(robot_name)
-#     cs.run()
+if __name__ == '__main__':
+    rospy.init_node('camera_listener', anonymous=True)
+    robot_name = "alpha"
+    cs = CameraSubscriber(robot_name)
+    image = cs.get_image()
+    cv2.imwrite("./images/lane/image-" + time.strftime("%H%M%S") + ".jpg", image)
