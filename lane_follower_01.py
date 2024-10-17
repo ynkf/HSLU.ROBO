@@ -115,9 +115,9 @@ class LaneFollower:
         # creating a polygon to focus only on the road in the picture
         # we have created this polygon in accordance to how the camera was placed
         rows, cols = edges.shape[:2]
-        bottom_left  = [cols * 0, rows * 0.95]
+        bottom_left  = [cols * 0, rows * 0.85]
         top_left     = [cols * 0.1, rows * 0.5]
-        bottom_right = [cols * 1, rows * 0.95]
+        bottom_right = [cols * 1, rows * 0.85]
         top_right    = [cols * 0.9, rows * 0.5]
         vertices = np.array([[bottom_left, top_left, top_right, bottom_right]], dtype=np.int32)
         # filling the polygon with white color and generating the final mask
