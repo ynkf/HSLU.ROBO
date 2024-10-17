@@ -29,8 +29,8 @@ class WheelCommandPublisher:
         
 
     def run(self):
-        self.turn_wheels(1, 1)
-        rospy.sleep(3) # wait 3 seconds
+        # self.turn_wheels(1, 1)
+        # rospy.sleep(3) # wait 3 seconds
         # stop wheels
         self.turn_wheels(0.0, 0.0)
 
