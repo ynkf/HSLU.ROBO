@@ -42,7 +42,14 @@ class LaneFollower:
                 l = hough[i][0]
                 cv2.line(image, (l[0], l[1]), (l[2], l[3]), (0,0,255), 3, cv2.LINE_AA)
 
-        left_line, middle_line, right_line = self.lane_lines(image, hough)
+        lines = self.lane_lines(image, hough)
+        if lines == None:
+            # self.wheel_command_publisher.turn_wheels(self.avg_vel, self.avg_vel)
+            rospy.loginfo("lines were not detected correctly!!")
+            return
+
+        left_line, middle_line, right_line = lines
+
         center_to_middle_line = ((image.shape[1] // 2, 480), middle_line[1])
         rospy.loginfo("center_to_middle_line=" + str(center_to_middle_line))
 
@@ -68,15 +75,15 @@ class LaneFollower:
         left_vel = self.avg_vel - (center_middle_slope * 0.3)
         if left_vel < 0.1:
             left_vel = 0.1
-        elif left_vel > 0.5:
-            left_vel = 0.5
+        elif left_vel > 0.4:
+            left_vel = 0.4
         rospy.loginfo("left_vel=" + str(left_vel))
    
         right_vel = self.avg_vel + (center_middle_slope * 0.3)
         if right_vel < 0.1:
             right_vel = 0.1
-        elif right_vel > 0.5:
-            right_vel = 0.5
+        elif right_vel > 0.4:
+            right_vel = 0.4
         rospy.loginfo("rigth_vel=" + str(right_vel))
 
         self.wheel_command_publisher.turn_wheels(left_vel, right_vel)
@@ -92,9 +99,17 @@ class LaneFollower:
 
         grayscale = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
+        lower_hsv = np.array([0,0,140])
+        upper_hsv = np.array([0,0,230])
+
+        graybgr = cv2.cvtColor(grayscale, cv2.COLOR_GRAY2BGR)
+        grayhsv = cv2.cvtColor(graybgr, cv2.COLOR_BGR2HSV)
+
+        graymasked = cv2.inRange(grayhsv, lower_hsv, upper_hsv)
+
         kernel_size = 5
         # Applying gaussian blur to remove noise from the frames
-        blur = cv2.GaussianBlur(grayscale, (kernel_size, kernel_size), 0)
+        blur = cv2.GaussianBlur(graymasked, (kernel_size, kernel_size), 0)
 
         low_t = 50
         # second threshold for the hysteresis procedure 
@@ -116,9 +131,9 @@ class LaneFollower:
         # we have created this polygon in accordance to how the camera was placed
         rows, cols = edges.shape[:2]
         bottom_left  = [cols * 0, rows * 0.85]
-        top_left     = [cols * 0.1, rows * 0.5]
+        top_left     = [cols * 0.1, rows * 0.6]
         bottom_right = [cols * 1, rows * 0.85]
-        top_right    = [cols * 0.9, rows * 0.5]
+        top_right    = [cols * 0.9, rows * 0.6]
         vertices = np.array([[bottom_left, top_left, top_right, bottom_right]], dtype=np.int32)
         # filling the polygon with white color and generating the final mask
         cv2.fillPoly(mask, vertices, ignore_mask_color)
@@ -136,10 +151,25 @@ class LaneFollower:
                 lines: The output lines from Hough Transform.
         """
         left_lane, right_lane = self.average_slope_intercept(lines)
+
+        left_slope, left_intercept = (0, 0)
+        right_slope, right_intercept = (0, 0)
+        try:
+            left_slope, left_intercept = left_lane
+            right_slope, right_intercept = left_lane
+        except TypeError:
+            return None
+
+        if left_slope > 2 or left_slope < -2 or right_slope > 2 or right_slope < -2:
+            return None
+
         y1 = image.shape[0]
         y2 = y1 * 0.6
         left_line  = self.pixel_points(y1, y2, left_lane)
         right_line = self.pixel_points(y1, y2, right_lane)
+
+        if left_line == None or right_line == None:
+            return None
 
         rospy.loginfo("left_line cords=" + str(left_line))
         rospy.loginfo("right_line cords=" + str(right_line))
