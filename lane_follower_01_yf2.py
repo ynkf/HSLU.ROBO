@@ -88,7 +88,7 @@ class LaneFollower:
     def do_image_processing(self, iteration):
         # image processing is done on the latest image received
         image = self.camera_subscriber.get_image()
-        # cv2.imwrite("./images/image-" + str(iteration) + ".jpg", image)
+        cv2.imwrite("./images/image-" + str(iteration) + ".jpg", image)
 
         grayscale = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
@@ -124,9 +124,9 @@ class LaneFollower:
         # we have created this polygon in accordance to how the camera was placed
         rows, cols = edges.shape[:2]
         bottom_left  = [cols * 0, rows * 0.85]
-        top_left     = [cols * 0.1, rows * 0.5]
+        top_left     = [cols * 0.1, rows * 0.4]
         bottom_right = [cols * 1, rows * 0.85]
-        top_right    = [cols * 0.9, rows * 0.5]
+        top_right    = [cols * 0.9, rows * 0.4]
         vertices = np.array([[bottom_left, top_left, top_right, bottom_right]], dtype=np.int32)
         # filling the polygon with white color and generating the final mask
         cv2.fillPoly(mask, vertices, ignore_mask_color)
