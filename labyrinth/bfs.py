@@ -6,21 +6,24 @@ import numpy as np
 class BFS:
 
     def __init__(self, matrix):
-        self.graph = self.matrix_to_graph(matrix)
+        graph, start_node, end_node = self.matrix_to_graph(matrix)
+        self.graph = graph
+        self.start_node = start_node
+        self.end_node = end_node
 
 
-    def shortest_path(self, start_node, end_node):
+    def shortest_path(self):
         """
             Find the shortest path in a graph.
             Parameters:
                 start_node: key for the start node in the graph
                 end_node: key for the end node in the graph
         """
-        path_list = [[start_node]]
+        path_list = [[self.start_node]]
         path_index = 0
         # To keep track of previously visited nodes
-        previous_nodes = {start_node}
-        if start_node == end_node:
+        previous_nodes = {self.start_node}
+        if self.start_node == self.end_node:
             return path_list[0]
             
         while path_index < len(path_list):
@@ -28,8 +31,8 @@ class BFS:
             last_node = current_path[-1]
             next_nodes = self.graph[last_node]
             # Search goal node
-            if end_node in next_nodes:
-                current_path.append(end_node)
+            if self.end_node in next_nodes:
+                current_path.append(self.end_node)
                 return current_path
             # Add new paths
             for next_node in next_nodes:
@@ -47,24 +50,32 @@ class BFS:
 
     def matrix_to_graph(self, matrix):
         graph = {}
+        start_node = None
+        end_node = None
 
         for row in range(labyrinth_matrix.shape[0]):
             for column in range(labyrinth_matrix.shape[1]):
-                if labyrinth_matrix[row][column] == ' ':
+                node = labyrinth_matrix[row][column]
+                if node == ' ':
                     continue
+                if node == 'S':
+                    start_node = (row, column)
+                if node == 'E':
+                    end_node = (row, column)
+
                 neighbors = list()
-                if row - 1 >= 0 and labyrinth_matrix[row - 1][column] == 'X':
+                if row - 1 >= 0 and labyrinth_matrix[row - 1][column] in ['X', 'S', 'E']:
                     neighbors.append((row - 1, column))
-                if row + 1 < labyrinth_matrix.shape[0] and labyrinth_matrix[row + 1][column] == 'X':
+                if row + 1 < labyrinth_matrix.shape[0] and labyrinth_matrix[row + 1][column] in ['X', 'S', 'E']:
                     neighbors.append((row + 1, column))
-                if column - 1 >= 0 and labyrinth_matrix[row][column - 1] == 'X':
+                if column - 1 >= 0 and labyrinth_matrix[row][column - 1] in ['X', 'S', 'E']:
                     neighbors.append((row, column - 1))
-                if column + 1 < labyrinth_matrix.shape[1] and labyrinth_matrix[row][column + 1] == 'X':
+                if column + 1 < labyrinth_matrix.shape[1] and labyrinth_matrix[row][column + 1] in ['X', 'S', 'E']:
                     neighbors.append((row, column + 1))
                 
                 graph[(row, column)] = neighbors
 
-        return graph
+        return graph, start_node, end_node
         
 
 
@@ -80,13 +91,15 @@ if __name__ == '__main__':
         ['X', ' ', 'X', ' ', 'X', ' ', 'X', ' ', ' ', ' ', ' ', ' ', 'X'],
         ['X', 'X', 'X', ' ', 'X', ' ', 'X', ' ', 'X', 'X', 'X', 'X', 'X'],
         [' ', ' ', ' ', ' ', 'X', ' ', ' ', ' ', 'X', ' ', ' ', ' ', ' '],
-        ['X', 'X', 'X', 'X', 'X', 'X', 'X', ' ', 'X', 'X', 'X', 'X', 'X']
+        ['S', 'X', 'X', 'X', 'X', 'X', 'X', ' ', 'X', 'X', 'X', 'X', 'E']
     ])
 
     bfs = BFS(labyrinth_matrix)
-    path = bfs.shortest_path((10, 0), (10, 12))
+    path = bfs.shortest_path()
 
     result = labyrinth_matrix.copy()
     for row, column in path:
         result[row][column] = '0'
+    result[bfs.start_node[0]][bfs.start_node[1]] = 'S'
+    result[bfs.end_node[0]][bfs.end_node[1]] = 'E'
     print(result)
