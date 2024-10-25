@@ -4,6 +4,7 @@ import rospy
 from camera_subscriber import CameraSubscriber
 from wheel_command_publisher import WheelCommandPublisher
 from node_detection import NodeDetection
+from line_follower import LineFollower
 from bfs import BFS
 
 class LabyrinthNavigator:
@@ -16,39 +17,81 @@ class LabyrinthNavigator:
         (1, 0): 'DOWN'
     }
     
+    # Define possible turning directions
+    turning_rules = {
+        ('RIGHT', 'UP'): ('LEFT', 90),
+        ('UP', 'LEFT'): ('LEFT', 90),
+        ('LEFT', 'DOWN'): ('LEFT', 90),
+        ('DOWN', 'RIGHT'): ('LEFT', 90),
+        
+        ('UP', 'RIGHT'): ('RIGHT', 90),
+        ('LEFT', 'UP'): ('RIGHT', 90),
+        ('DOWN', 'LEFT'): ('RIGHT', 90),
+        ('RIGHT', 'DOWN'): ('RIGHT', 90),
+    }
+    
     def __init__(self, robot_name):
         rospy.init_node('LabyrinthNavigator', anonymous=True)
         self.wheel_command_publisher = WheelCommandPublisher(robot_name)
         self.camera_subscriber = CameraSubscriber(robot_name)
         self.node_detection = NodeDetection()
         simple_matrix = np.array([
-        [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
-        [' ', 'X', 'X', 'X', ' ', 'X', 'X', ' ', ' '],
-        [' ', 'X', ' ', 'X', ' ', 'X', ' ', ' ', ' '],
-        [' ', 'X', ' ', 'X', 'X', 'X', 'X', 'E', ' '],
-        [' ', 'X', ' ', 'X', ' ', 'X', ' ', ' ', ' '],
-        [' ', 'S', ' ', 'X', 'X', 'X', ' ', ' ', ' '],
-        [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+            [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+            [' ', 'X', 'X', 'X', ' ', 'X', 'X', ' ', ' '],
+            [' ', 'X', ' ', 'X', ' ', 'X', ' ', ' ', ' '],
+            [' ', 'X', ' ', 'X', 'X', 'X', 'X', 'E', ' '],
+            [' ', 'X', ' ', 'X', ' ', 'X', ' ', ' ', ' '],
+            [' ', 'S', ' ', 'X', 'X', 'X', ' ', ' ', ' '],
+            [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
         ])
         self.bfs = BFS(simple_matrix)
         self.path = self.bfs.shortest_path()
-        self.previous_direction = self.get_direction(path[0], path[1])
+        self.current_node_index = 0
+        self.current_direction = self.get_direction(path[0], path[1])
         
 
 
     def run(self):
-        image = self.camera_subscriber.get_image()
-        node_index = self.node_detection.get_node_index(image)
-        
-        if node_index:
-            #stop wheels
-            current_node = path[node_index]
-            next_node = path[node_index + 1]
-            
-            current_direction = self.get_direction(current_node, next_node)
+        current_node = path[self.current_node_index]
+        next_node = path[self.current_node_index + 1]
+        # is current node end node -> stop labyrinth navigator
 
+        # calculate direction for next node
+        next_direction = self.get_direction(current_node, next_node)
+
+        # if next node is not same direction as before -> turn to the correct direction
+        if next_direction != self.current_direction:
+            # call turn script
+
+        # call line follower and wait until it reached the next node
         
+        self.current_node_index = current_direction + 1
+
+
+        # image = self.camera_subscriber.get_image()
+        # node_index = self.node_detection.get_node_index(image)
         
+        # if node_index:
+        #     current_node = path[node_index]
+        #     next_node = path[node_index + 1]
+            
+        #     current_direction = self.get_direction(current_node, next_node)
+
+        #     if current_direction != self.previous_direction:
+        #         # stop wheels
+
+        #     self.previous_direction = current_direction
+
+
+    def follow_line(self):
+        #node detection
+        return
+    
+    def decide_direction(self):
+        return
+
+    def turn_on_node(self):
+        return
         
 
 
@@ -56,17 +99,6 @@ class LabyrinthNavigator:
         return direction_map.get((next_node[0] - current_node[0], next_node[1] - current_node[1]))
     
     def navigate(self, node_image, node_count):
-        
-                    
-                    
-    def is_turnnode(self, node):
-        
-    def direction(self, path):
-        
-    def turning_direction(self):
-        
-    def stop(self):
-        self.wheel_command_publisher.turn_wheels(0, 0)
         
                     
                     
