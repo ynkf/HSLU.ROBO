@@ -94,10 +94,20 @@ if __name__ == '__main__':
         ['S', 'X', 'X', 'X', 'X', 'X', 'X', ' ', 'X', 'X', 'X', 'X', 'E']
     ])
 
-    bfs = BFS(labyrinth_matrix)
+    simple_matrix = np.array([
+        [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', 'X', 'X', 'X', ' ', 'X', 'X', ' ', ' '],
+        [' ', 'X', ' ', 'X', ' ', 'X', ' ', ' ', ' '],
+        [' ', 'X', ' ', 'X', 'X', 'X', 'X', 'E', ' '],
+        [' ', 'X', ' ', 'X', ' ', 'X', ' ', ' ', ' '],
+        [' ', 'S', ' ', 'X', 'X', 'X', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+    ])
+
+    bfs = BFS(simple_matrix)
     path = bfs.shortest_path()
 
-    result = labyrinth_matrix.copy()
+    result = simple_matrix.copy()
     for row, column in path:
         result[row][column] = '0'
     result[bfs.start_node[0]][bfs.start_node[1]] = 'S'
