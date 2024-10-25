@@ -53,9 +53,9 @@ class BFS:
         start_node = None
         end_node = None
 
-        for row in range(labyrinth_matrix.shape[0]):
-            for column in range(labyrinth_matrix.shape[1]):
-                node = labyrinth_matrix[row][column]
+        for row in range(matrix.shape[0]):
+            for column in range(matrix.shape[1]):
+                node = matrix[row][column]
                 if node == ' ':
                     continue
                 if node == 'S':
@@ -64,13 +64,13 @@ class BFS:
                     end_node = (row, column)
 
                 neighbors = list()
-                if row - 1 >= 0 and labyrinth_matrix[row - 1][column] in ['X', 'S', 'E']:
+                if row - 1 >= 0 and matrix[row - 1][column] in ['X', 'S', 'E']:
                     neighbors.append((row - 1, column))
-                if row + 1 < labyrinth_matrix.shape[0] and labyrinth_matrix[row + 1][column] in ['X', 'S', 'E']:
+                if row + 1 < matrix.shape[0] and matrix[row + 1][column] in ['X', 'S', 'E']:
                     neighbors.append((row + 1, column))
-                if column - 1 >= 0 and labyrinth_matrix[row][column - 1] in ['X', 'S', 'E']:
+                if column - 1 >= 0 and matrix[row][column - 1] in ['X', 'S', 'E']:
                     neighbors.append((row, column - 1))
-                if column + 1 < labyrinth_matrix.shape[1] and labyrinth_matrix[row][column + 1] in ['X', 'S', 'E']:
+                if column + 1 < matrix.shape[1] and matrix[row][column + 1] in ['X', 'S', 'E']:
                     neighbors.append((row, column + 1))
                 
                 graph[(row, column)] = neighbors
