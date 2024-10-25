@@ -16,25 +16,13 @@ class LabyrinthNavigator:
         (-1, 0): 'UP',
         (1, 0): 'DOWN'
     }
-    
-    # Define possible turning directions
-    turning_rules = {
-        ('RIGHT', 'UP'): ('LEFT', 90),
-        ('UP', 'LEFT'): ('LEFT', 90),
-        ('LEFT', 'DOWN'): ('LEFT', 90),
-        ('DOWN', 'RIGHT'): ('LEFT', 90),
         
-        ('UP', 'RIGHT'): ('RIGHT', 90),
-        ('LEFT', 'UP'): ('RIGHT', 90),
-        ('DOWN', 'LEFT'): ('RIGHT', 90),
-        ('RIGHT', 'DOWN'): ('RIGHT', 90),
-    }
-    
     def __init__(self, robot_name):
         rospy.init_node('LabyrinthNavigator', anonymous=True)
         self.wheel_command_publisher = WheelCommandPublisher(robot_name)
         self.camera_subscriber = CameraSubscriber(robot_name)
         self.node_detection = NodeDetection()
+        self.line_follower = LineFollower()
         simple_matrix = np.array([
             [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
             [' ', 'X', 'X', 'X', ' ', 'X', 'X', ' ', ' '],
@@ -47,13 +35,13 @@ class LabyrinthNavigator:
         self.bfs = BFS(simple_matrix)
         self.path = self.bfs.shortest_path()
         self.current_node_index = 0
-        self.current_direction = self.get_direction(path[0], path[1])
+        self.current_direction = self.get_direction(self.path[0], self.path[1])
         
 
 
     def run(self):
-        current_node = path[self.current_node_index]
-        next_node = path[self.current_node_index + 1]
+        current_node = self.path[self.current_node_index]
+        next_node = self.path[self.current_node_index + 1]
         # is current node end node -> stop labyrinth navigator
 
         # calculate direction for next node
@@ -62,10 +50,17 @@ class LabyrinthNavigator:
         # if next node is not same direction as before -> turn to the correct direction
         if next_direction != self.current_direction:
             # call turn script
+            # turningLogic.turn(current_direction, next_direction)
+            pass
 
         # call line follower and wait until it reached the next node
         
-        self.current_node_index = current_direction + 1
+
+        while(not is_node):
+            self.line_follower.follow_line()
+        pass
+        
+        self.current_node_index += 1
 
 
         # image = self.camera_subscriber.get_image()
@@ -106,33 +101,6 @@ class LabyrinthNavigator:
                     
                     
                     
-# Simulated path
-path = [(10, 0), (10, 1), (10, 2), (10, 3), (10, 4), (9, 4), (8, 4), (8, 3)]
-
-# Dictionary for directions
-direction_map = {
-    (0, -1): 'LEFT',
-    (0, 1): 'RIGHT',
-    (-1, 0): 'UP',
-    (1, 0): 'DOWN'
-}
-
-# Define possible turning directions
-turning_rules = {
-    ('RIGHT', 'UP'): ('LEFT', 90),
-    ('UP', 'LEFT'): ('LEFT', 90),
-    ('LEFT', 'DOWN'): ('LEFT', 90),
-    ('DOWN', 'RIGHT'): ('LEFT', 90),
-    
-    ('UP', 'RIGHT'): ('RIGHT', 90),
-    ('LEFT', 'UP'): ('RIGHT', 90),
-    ('DOWN', 'LEFT'): ('RIGHT', 90),
-    ('RIGHT', 'DOWN'): ('RIGHT', 90),
-}
-
-# List to store turn nodes and details
-turn_nodes = []
-
 # Variable to track the previous direction
 previous_direction = None
 

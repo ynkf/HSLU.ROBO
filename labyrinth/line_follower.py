@@ -18,6 +18,7 @@ class LineFollower:
 
 
     def run(self):
+        #finishes if on node
         #TODO: follow line until node detection
         is_node = False
         iteration = 1
@@ -28,7 +29,7 @@ class LineFollower:
             self.follow_line(image, iteration)
 
     def follow_line(self, image, iteration):
-        masked = self.do_image_processing(iteration)
+        masked = self.do_image_processing(image, iteration)
         # cv2.imwrite("./images/masked-" + str(iteration) + ".jpg", masked)
 
         # calculate a value for the left and the right sensory input
@@ -59,9 +60,9 @@ class LineFollower:
         self.wheel_command_publisher.turn_wheels(0, 0)
         
 
-    def do_image_processing(self, iteration):
+    def do_image_processing(self, image, iteration):
         # image processing is done on the latest image received
-        image = self.camera_subscriber.get_image()
+        # image = self.camera_subscriber.get_image()
         cv2.imwrite("./images/image-" + str(iteration) + ".jpg", image)
 
         image = image[int(image.shape[0] // 2):image.shape[0] - 100]
