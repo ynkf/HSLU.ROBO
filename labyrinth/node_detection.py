@@ -1,16 +1,17 @@
 import cv2
 import numpy as np
+import rospy
 
 class NodeDetection:
     
-    def __init__(self, robot_name):
+    def __init__(self):
         rospy.init_node('NodeDetection', anonymous=True)
         self.previous_red_seen = False
         self.red_seen = False
         self.node_index = 0
         
     
-    def do_image_processing(self, image):
+    def do_image_processing(self, image, iteration):
         # Color image to HSV        
         image_hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
         
@@ -39,13 +40,14 @@ class NodeDetection:
         h_split = h // 6
         masked_w_split = masked[:, w_split:2 * w_split]
         node_image = masked_w_split[5 * h_split:, :]
-        
+
+        cv2.imwrite("./images/nd-mask-" + str(iteration) + ".jpg", node_image)
         return node_image
     
     
-    def get_node_index(self, image):
+    def detect_on_node(self, image, iteration):
         # Check for nodes (for every image)
-        red_pixel_count = np.count_nonzero(self.do_image_processing(image))
+        red_pixel_count = np.count_nonzero(self.do_image_processing(image, iteration))
         if red_pixel_count > 100:
             previous_red_seen = red_seen
             red_seen = True
@@ -54,5 +56,5 @@ class NodeDetection:
             red_seen = False  
             if previous_red_seen == True and red_seen == False:
                 self.node_index += 1
-                return self.node_index
-        return None
+                return True
+        return False

@@ -15,18 +15,20 @@ class LineFollower:
         rospy.init_node('line_follower', anonymous=True)
         self.wheel_command_publisher = WheelCommandPublisher(robot_name)
         self.camera_subscriber = CameraSubscriber(robot_name)
+        self.node_detection = NodeDetection()
 
-
-    def run(self):
+    def follow_line_until_node(self):
         #finishes if on node
-        #TODO: follow line until node detection
-        is_node = False
+        is_on_node = False
         iteration = 1
 
-        while(not is_node):
+        while(not is_on_node):
             image = self.camera_subscriber.get_image()
+            cv2.imwrite("./images/image-" + str(iteration) + ".jpg", image)
 
             self.follow_line(image, iteration)
+            is_on_node = self.node_detection.detect_on_node(image, iteration)
+            iteration += 1
 
     def follow_line(self, image, iteration):
         masked = self.do_image_processing(image, iteration)
@@ -62,9 +64,6 @@ class LineFollower:
 
     def do_image_processing(self, image, iteration):
         # image processing is done on the latest image received
-        # image = self.camera_subscriber.get_image()
-        cv2.imwrite("./images/image-" + str(iteration) + ".jpg", image)
-
         image = image[int(image.shape[0] // 2):image.shape[0] - 100]
 
         rospy.loginfo("image size: " + str(image.shape))
@@ -76,6 +75,7 @@ class LineFollower:
         mask = cv2.inRange(image_hsv, yellow_lower_hsv, yellow_upper_hsv)
 
         # show the part of the image that is within the color range
+        cv2.imwrite("./images/lf-mask-" + str(iteration) + ".jpg", mask)
         return cv2.bitwise_and(image, image, mask=mask)
 
 
