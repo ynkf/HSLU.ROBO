@@ -1,11 +1,11 @@
+#!/usr/bin/python3
+
 import rospy
 from wheel_command_publisher import WheelCommandPublisher
 
 class Turning:
     
     def __init__(self, robot_name):
-        # das bruchts glaub ned? mümmer nur einisch im navigator mache
-        rospy.init_node('Turning', anonymous=True)
         self.wheel_command_publisher = WheelCommandPublisher(robot_name)
         self.turning_rules = {
         ('RIGHT', 'UP'): ('LEFT'),
@@ -24,8 +24,8 @@ class Turning:
     
     def turn(self, turning_direction):
         if turning_direction == 'LEFT':
-            self.wheel_command_publisher.turn_wheels(-0.1, 0.1)
+            self.wheel_command_publisher.turn_wheels(-0.2, 0.2)
         elif turning_direction == 'RIGHT':
-            self.wheel_command_publisher.turn_wheels(0.1, -0.1)
+            self.wheel_command_publisher.turn_wheels(0.2, -0.2)
         rospy.sleep(1) # TEST! -> should be 90°
         self.wheel_command_publisher.stop_wheels()

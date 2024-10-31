@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+import rospy
 import numpy as np
 
 from utils.labyrinths import *
@@ -8,6 +9,7 @@ class BFS:
 
     def __init__(self, matrix):
         graph, start_node, end_node = self.matrix_to_graph(matrix)
+        self.matrix = matrix
         self.graph = graph
         self.start_node = start_node
         self.end_node = end_node
@@ -77,7 +79,14 @@ class BFS:
                 graph[(row, column)] = neighbors
 
         return graph, start_node, end_node
-        
+
+    def visualize(self, shortest_path):
+        result = self.matrix.copy()
+        for row, column in shortest_path:
+            result[row][column] = '0'
+        result[self.start_node[0]][self.start_node[1]] = 'S'
+        result[self.end_node[0]][self.end_node[1]] = 'E'
+        rospy.loginfo(result)        
 
 
 if __name__ == '__main__':

@@ -35,6 +35,12 @@ class WheelCommandPublisher:
         # self.turn_wheels(0.0, 0.0)
         pass
     
+    def turn_90(self):
+        self.turn_wheels(0.2, -0.2)
+        rospy.sleep(1)
+        self.stop_wheels()
+        self.stop_wheels()
+    
     def stop_wheels(self):
         self.turn_wheels(0.0, 0.0)
 
@@ -42,4 +48,4 @@ if __name__ == '__main__':
     # # initialize a node with a name, annonymous=True ensures that the name is unique
     rospy.init_node('wheel_command_publisher', anonymous=True)
     wcp = WheelCommandPublisher("alpha")
-    wcp.run()
+    wcp.turn_90()

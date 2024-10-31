@@ -12,7 +12,6 @@ class LineFollower:
     
     def __init__(self, robot_name):
         # initialize connection to physical components
-        rospy.init_node('line_follower', anonymous=True)
         self.wheel_command_publisher = WheelCommandPublisher(robot_name)
         self.camera_subscriber = CameraSubscriber(robot_name)
         self.node_detection = NodeDetection()
@@ -82,6 +81,8 @@ class LineFollower:
 
 if __name__ == '__main__':
     lineFollower = LineFollower("alpha")
+    rospy.init_node('line_follower', anonymous=True)
+
     x = 0
     while (x < 100):
         lineFollower.run(x)

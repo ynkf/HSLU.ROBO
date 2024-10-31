@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import cv2
 import numpy as np
 import rospy
@@ -5,7 +7,6 @@ import rospy
 class NodeDetection:
     
     def __init__(self):
-        rospy.init_node('NodeDetection', anonymous=True)
         self.previous_red_seen = False
         self.red_seen = False
         self.node_index = 0
@@ -47,6 +48,7 @@ class NodeDetection:
     
     def detect_on_node(self, image, iteration):
         # Check for nodes (for every image)
+        # TODO: this does not work
         red_pixel_count = np.count_nonzero(self.do_image_processing(image, iteration))
         if red_pixel_count > 100:
             previous_red_seen = red_seen

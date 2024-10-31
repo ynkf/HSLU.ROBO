@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import numpy as np
 import rospy
 
@@ -20,17 +22,21 @@ class LabyrinthNavigator:
         self.bfs = BFS(labyrinth)
 
         self.path = self.bfs.shortest_path()
+        self.bfs.visualize(self.path)
+
         self.current_node_index = 0
         self.current_direction = self.get_direction(self.path[0], self.path[1])
         
 
     def run(self):
-        while (self.current_node_index < self.path[-1].index):
+        while (self.current_node_index < len(self.path)):
+            rospy.loginfo(f'Start Iteration: {self.current_node_index}')
             current_node = self.path[self.current_node_index]
             next_node = self.path[self.current_node_index + 1]            
 
             # calculate direction for next node
             next_direction = self.get_direction(current_node, next_node)
+            rospy.loginfo(f'Next Direction: {next_direction}')
 
             # if next node is not same direction as before -> turn to the correct direction
             if next_direction != self.current_direction:
@@ -47,8 +53,10 @@ class LabyrinthNavigator:
         return direction_map.get((next_node[0] - current_node[0], next_node[1] - current_node[1]))
         
 
-if __name__ == 'main':
+if __name__ == '__main__':
     matrix = simple_matrix()
+    rospy.loginfo("Start labyrinth navigator with matrix:")
+    rospy.loginfo(matrix)
 
-    labyrinthNavigator = LabyrinthNavigator(simple_matrix, "alpha")
+    labyrinthNavigator = LabyrinthNavigator(matrix, "alpha")
     labyrinthNavigator.run()
