@@ -4,7 +4,7 @@ import numpy as np
 import rospy
 
 from wheel_command_publisher import WheelCommandPublisher
-from line_follower import LineFollower
+from lane_follower_02 import LaneFollower
 from turning import Turning
 from bfs import BFS
 
@@ -17,7 +17,7 @@ class LabyrinthNavigator:
         rospy.init_node('LabyrinthNavigator', anonymous=True)
 
         self.wheel_command_publisher = WheelCommandPublisher(robot_name)
-        self.line_follower = LineFollower(robot_name)
+        self.line_follower = LaneFollower(robot_name)
         self.turning = Turning(robot_name)
         self.bfs = BFS(labyrinth)
 
@@ -45,6 +45,10 @@ class LabyrinthNavigator:
             
             # call line follower and wait until it reached the next node
             self.line_follower.follow_line_until_node()
+            
+            # stop at each node for 1 second
+            self.wheel_command_publisher.stop_wheels()
+            rospy.sleep(1)
             
             self.current_node_index += 1
 

@@ -31,13 +31,14 @@ class LineFollower:
 
     def follow_line(self, image, iteration):
         masked = self.do_image_processing(image, iteration)
+        masked = masked[masked.shape[0] // 2:]
         # cv2.imwrite("./images/masked-" + str(iteration) + ".jpg", masked)
 
         # calculate a value for the left and the right sensory input
         split = int(masked.shape[1] // 5)
-        left = masked[:, :2 * split]
-        middle = masked[:, 2 * split:3 * split]
-        right = masked[:, 3 * split:]
+        left = masked[:, (1 * split):(2 * split)]
+        middle = masked[:, (2 * split):(3 * split)]
+        right = masked[:, (3 * split):(4 * split)]
 
         left_yellow = np.count_nonzero(left)
         middle_yellow = np.count_nonzero(middle)
@@ -54,8 +55,7 @@ class LineFollower:
             self.wheel_command_publisher.turn_wheels(0.1, 0.35)
         else:
             self.wheel_command_publisher.turn_wheels(0.35, 0.1)
-
-        return
+            
     
     def stop(self):
         self.wheel_command_publisher.turn_wheels(0, 0)

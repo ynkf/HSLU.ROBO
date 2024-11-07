@@ -51,12 +51,12 @@ class NodeDetection:
         # TODO: this does not work
         red_pixel_count = np.count_nonzero(self.do_image_processing(image, iteration))
         if red_pixel_count > 100:
-            previous_red_seen = red_seen
-            red_seen = True
+            previous_red_seen = self.red_seen
+            self.red_seen = True
         elif red_pixel_count <= 100:
-            previous_red_seen = red_seen
-            red_seen = False  
-            if previous_red_seen == True and red_seen == False:
+            previous_red_seen = self.red_seen
+            self.red_seen = False  
+            if previous_red_seen == True and self.red_seen == False:
                 self.node_index += 1
                 return True
         return False

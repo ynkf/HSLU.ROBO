@@ -42,4 +42,4 @@ if __name__ == '__main__':
     robot_name = "alpha"
     cs = CameraSubscriber(robot_name)
     image = cs.get_image()
-    cv2.imwrite("./images/labyrinth/image-" + time.strftime("%H%M%S") + ".jpg", image)
+    cv2.imwrite("./labyrinth/images/image-" + time.strftime("%H%M%S") + ".jpg", image)

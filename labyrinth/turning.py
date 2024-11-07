@@ -23,9 +23,12 @@ class Turning:
         return self.turning_rules.get(current_direction, next_direction)
     
     def turn(self, turning_direction):
+        self.wheel_command_publisher.stop_wheels()
+        rospy.sleep(1)
         if turning_direction == 'LEFT':
             self.wheel_command_publisher.turn_wheels(-0.2, 0.2)
         elif turning_direction == 'RIGHT':
             self.wheel_command_publisher.turn_wheels(0.2, -0.2)
         rospy.sleep(1) # TEST! -> should be 90°
         self.wheel_command_publisher.stop_wheels()
+        rospy.sleep(1)
