@@ -25,13 +25,15 @@ class LaneFollower:
         is_on_node = False
         iteration = 1
 
+        image = None
         while(not is_on_node):
             image = self.camera_subscriber.get_image()
 
             self.follow_line(image, iteration)
             is_on_node = self.node_detection.detect_on_node(image, iteration)
-            rospy.sleep(0.2)
             iteration += 1
+            
+        cv2.imwrite("./labyrinth/images/test1/image-node-" + time.strftime("%H%M%S") + ".jpg", image)
 
     def stop(self):
         self.wheel_command_publisher.turn_wheels(0, 0)
@@ -39,7 +41,7 @@ class LaneFollower:
     def follow_line(self, image, iteration):
         image, region = self.do_image_processing(image, iteration)
         rospy.loginfo("iteration=" + str(iteration))
-        cv2.imwrite("./labyrinth/images/test1/image-" + time.strftime("%H%M%S") + "-" + str(iteration) + ".jpg", image)
+        # cv2.imwrite("./labyrinth/images/test1/image-" + time.strftime("%H%M%S") + "-" + str(iteration) + ".jpg", image)
 
         # Distance resolution of the accumulator in pixels.
         rho = 1             
@@ -56,10 +58,11 @@ class LaneFollower:
         # appearing in the input image
         hough = cv2.HoughLinesP(region, rho = rho, theta = theta, threshold = threshold, minLineLength = minLineLength, maxLineGap = maxLineGap)
 
+        hough_image = image.copy()
         if hough is not None:
             for i in range(0, len(hough)):
                 l = hough[i][0]
-                cv2.line(image, (l[0], l[1]), (l[2], l[3]), (0,0,255), 3, cv2.LINE_AA)
+                cv2.line(hough_image, (l[0], l[1]), (l[2], l[3]), (0,0,255), 3, cv2.LINE_AA)
 
         line = self.lane_lines(image, hough)
         if line == None:
@@ -68,7 +71,6 @@ class LaneFollower:
             return
 
         center_to_middle_line = ((image.shape[1] // 2, 480), line[1])
-        rospy.loginfo("center_to_middle_line=" + str(center_to_middle_line))
 
         color=[255, 0, 0]
         thickness=12
@@ -81,25 +83,21 @@ class LaneFollower:
         
         weighted_image = cv2.addWeighted(image, 1.0, line_image, 1.0, 0.0)
 
-        cv2.imwrite("./labyrinth/images/test1/masked-" + time.strftime("%H%M%S") + "-" + str(iteration) + ".jpg", weighted_image)
+        # cv2.imwrite("./labyrinth/images/test1/masked-" + time.strftime("%H%M%S") + "-" + str(iteration) + ".jpg", weighted_image)
 
         center_middle_slope = (center_to_middle_line[0][0] - center_to_middle_line[1][0]) / (center_to_middle_line[0][1] - center_to_middle_line[1][1])
 
-        rospy.loginfo("middle_slope=" + str(center_middle_slope))
-
-        left_vel = self.avg_vel - (center_middle_slope * 0.3)
-        if left_vel < 0.1:
-            left_vel = 0.1
-        elif left_vel > 0.4:
-            left_vel = 0.4
-        rospy.loginfo("left_vel=" + str(left_vel))
+        left_vel = self.avg_vel - (center_middle_slope * 0.2)
+        if left_vel < 0.2:
+            left_vel = 0.2
+        elif left_vel > 0.3:
+            left_vel = 0.3
    
-        right_vel = self.avg_vel + (center_middle_slope * 0.3)
-        if right_vel < 0.1:
-            right_vel = 0.1
-        elif right_vel > 0.4:
-            right_vel = 0.4
-        rospy.loginfo("rigth_vel=" + str(right_vel))
+        right_vel = self.avg_vel + (center_middle_slope * 0.2)
+        if right_vel < 0.2:
+            right_vel = 0.2
+        elif right_vel > 0.3:
+            right_vel = 0.3
 
         self.wheel_command_publisher.turn_wheels(left_vel, right_vel)
 
@@ -178,22 +176,23 @@ class LaneFollower:
         line_array    = [] #(slope, intercept)
         weights  = [] #(length,)
         
-        rospy.loginfo("print all hough lines")
+        if lines is None:
+            return None 
         
         for line in lines:
-            rospy.loginfo(line)
             for x1, y1, x2, y2 in line:
                 if x1 == x2:
                     continue
                 # calculating slope of a line
                 slope = (y2 - y1) / (x2 - x1)
+                slope_interpretation =  (x2 - x1) / (y2 - y1)
                 # calculating intercept of a line
                 intercept = y1 - (slope * x1)
                 # calculating length of a line
                 length = np.sqrt(((y2 - y1) ** 2) + ((x2 - x1) ** 2))
                 
                 # TODO: should we reduce slope range??
-                if slope > -1 and slope < 1: 
+                if slope_interpretation > -1 and slope_interpretation < 1: 
                     line_array.append((slope, intercept))
                     weights.append((length))
                 

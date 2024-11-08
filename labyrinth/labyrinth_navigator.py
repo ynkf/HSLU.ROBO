@@ -23,6 +23,7 @@ class LabyrinthNavigator:
 
         self.path = self.bfs.shortest_path()
         self.bfs.visualize(self.path)
+        rospy.loginfo(self.path)
 
         self.current_node_index = 0
         self.current_direction = self.get_direction(self.path[0], self.path[1])
@@ -45,6 +46,7 @@ class LabyrinthNavigator:
             
             # call line follower and wait until it reached the next node
             self.line_follower.follow_line_until_node()
+            self.current_direction = next_direction
             
             # stop at each node for 1 second
             self.wheel_command_publisher.stop_wheels()
