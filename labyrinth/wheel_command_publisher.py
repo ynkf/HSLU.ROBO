@@ -25,7 +25,7 @@ class WheelCommandPublisher:
 
         self.command.header.stamp = rospy.Time.now()
         self.publisher.publish(self.command)
-        rospy.loginfo("Publishing wheel command")
+        # rospy.loginfo("Publishing wheel command")
         
 
     def run(self):

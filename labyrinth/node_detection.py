@@ -37,9 +37,9 @@ class NodeDetection:
         h, w, channels = masked.shape
 
         # Split the image vertically
-        w_split = w // 3
+        w_split = w // 5
         h_split = h // 6
-        masked_w_split = masked[:, w_split:2 * w_split]
+        masked_w_split = masked[:, 2 * w_split:4 * w_split]
         node_image = masked_w_split[5 * h_split:, :]
 
         cv2.imwrite("./images/nd-mask-" + str(iteration) + ".jpg", node_image)
@@ -53,7 +53,7 @@ class NodeDetection:
         if red_pixel_count > 100:
             previous_red_seen = self.red_seen
             self.red_seen = True
-        elif red_pixel_count <= 100:
+        elif red_pixel_count <= 50:
             previous_red_seen = self.red_seen
             self.red_seen = False  
             if previous_red_seen == True and self.red_seen == False:

@@ -24,7 +24,7 @@ class CameraSubscriber:
 
     def callback(self, data):
         # the callback should be light and fast
-        rospy.loginfo("Received camera image of type: '%s'" % data.format)
+        # rospy.loginfo("Received camera image of type: '%s'" % data.format)
         self.image = data
 
     def get_image(self):
