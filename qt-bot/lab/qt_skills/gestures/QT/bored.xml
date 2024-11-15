@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<gesture>
+    <name>operations.admin/QT/bored</name>
+    <parts>
+        <part>head</part>
+    </parts>
+    <duration>10.40</duration>
+    <waypoints count="209">
+        <point time="1644415926024152167">
+            <HeadPitch>0.53</HeadPitch>
+            <HeadYaw>-0.18</HeadYaw>
+        </point>
+        <point time="1644415926072800159">
+            <HeadPitch>0.53</HeadPitch>
+            <HeadYaw>-0.18</HeadYaw>
+        </point>
+        <point time="1644415926120828913">
+            <HeadPitch>0.53</HeadPitch>
+            <HeadYaw>-0.18</HeadYaw>
+        </point>
+        <point time="1644415926170794585">
+            <HeadPitch>0.53</HeadPitch>
+            <HeadYaw>-0.26</HeadYaw>
+        </point>
+        <point time="1644415926221531458">
+            <HeadPitch>0.53</HeadPitch>
+            <HeadYaw>-0.26</HeadYaw>
+        </point>
+        <point time="1644415926272643088">
+            <HeadPitch>0.53</HeadPitch>
+            <HeadYaw>-0.18</HeadYaw>
+        </point>
+        <point time="1644415926320706212">
+            <HeadPitch>0.44</HeadPitch>
+            <HeadYaw>-0.18</HeadYaw>
+        </point>
+        <point time="1644415926370787254">
+            <HeadPitch>0.26</HeadPitch>
+            <HeadYaw>-0.18</HeadYaw>
+        </point>
+        <point time="1644415926421708885">
+            <HeadPitch>-0.18</HeadPitch>
+            <HeadYaw>-0.18</HeadYaw>
+        </point>
+        <point time="1644415926471530076">
+            <HeadPitch>-0.44</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415926522951742">
+            <HeadPitch>-0.44</HeadPitch>
+            <HeadYaw>0.35</HeadYaw>
+        </point>
+        <point time="1644415926571554790">
+            <HeadPitch>-0.26</HeadPitch>
+            <HeadYaw>0.53</HeadYaw>
+        </point>
+        <point time="1644415926620836002">
+            <HeadPitch>-0.26</HeadPitch>
+            <HeadYaw>0.53</HeadYaw>
+        </point>
+        <point time="1644415926670693915">
+            <HeadPitch>-0.26</HeadPitch>
+            <HeadYaw>0.62</HeadYaw>
+        </point>
+        <point time="1644415926722842967">
+            <HeadPitch>-0.26</HeadPitch>
+            <HeadYaw>1.14</HeadYaw>
+        </point>
+        <point time="1644415926772885138">
+            <HeadPitch>-0.35</HeadPitch>
+            <HeadYaw>2.29</HeadYaw>
+        </point>
+        <point time="1644415926821564501">
+            <HeadPitch>-0.44</HeadPitch>
+            <HeadYaw>3.60</HeadYaw>
+        </point>
+        <point time="1644415926871633098">
+            <HeadPitch>-0.44</HeadPitch>
+            <HeadYaw>5.01</HeadYaw>
+        </point>
+        <point time="1644415926921763603">
+            <HeadPitch>-0.35</HeadPitch>
+            <HeadYaw>6.24</HeadYaw>
+        </point>
+        <point time="1644415926971555646">
+            <HeadPitch>-0.35</HeadPitch>
+            <HeadYaw>7.65</HeadYaw>
+        </point>
+        <point time="1644415927022899146">
+            <HeadPitch>-0.35</HeadPitch>
+            <HeadYaw>9.23</HeadYaw>
+        </point>
+        <point time="1644415927073082912">
+            <HeadPitch>-0.44</HeadPitch>
+            <HeadYaw>10.99</HeadYaw>
+        </point>
+        <point time="1644415927120776743">
+            <HeadPitch>-0.53</HeadPitch>
+            <HeadYaw>12.66</HeadYaw>
+        </point>
+        <point time="1644415927170688120">
+            <HeadPitch>-0.53</HeadPitch>
+            <HeadYaw>13.97</HeadYaw>
+        </point>
+        <point time="1644415927223543820">
+            <HeadPitch>-0.53</HeadPitch>
+            <HeadYaw>15.29</HeadYaw>
+        </point>
+        <point time="1644415927273595105">
+            <HeadPitch>-0.53</HeadPitch>
+            <HeadYaw>16.52</HeadYaw>
+        </point>
+        <point time="1644415927323233521">
+            <HeadPitch>-0.53</HeadPitch>
+            <HeadYaw>17.75</HeadYaw>
+        </point>
+        <point time="1644415927372411716">
+            <HeadPitch>-0.53</HeadPitch>
+            <HeadYaw>18.90</HeadYaw>
+        </point>
+        <point time="1644415927422330890">
+            <HeadPitch>-0.62</HeadPitch>
+            <HeadYaw>20.39</HeadYaw>
+        </point>
+        <point time="1644415927471562882">
+            <HeadPitch>-0.62</HeadPitch>
+            <HeadYaw>21.80</HeadYaw>
+        </point>
+        <point time="1644415927522526126">
+            <HeadPitch>-0.62</HeadPitch>
+            <HeadYaw>23.20</HeadYaw>
+        </point>
+        <point time="1644415927577167004">
+            <HeadPitch>-0.62</HeadPitch>
+            <HeadYaw>24.52</HeadYaw>
+        </point>
+        <point time="1644415927620893850">
+            <HeadPitch>-0.62</HeadPitch>
+            <HeadYaw>25.66</HeadYaw>
+        </point>
+        <point time="1644415927671286523">
+            <HeadPitch>-0.88</HeadPitch>
+            <HeadYaw>26.72</HeadYaw>
+        </point>
+        <point time="1644415927721747732">
+            <HeadPitch>-1.58</HeadPitch>
+            <HeadYaw>27.86</HeadYaw>
+        </point>
+        <point time="1644415927771434295">
+            <HeadPitch>-2.55</HeadPitch>
+            <HeadYaw>29.00</HeadYaw>
+        </point>
+        <point time="1644415927821811912">
+            <HeadPitch>-3.60</HeadPitch>
+            <HeadYaw>30.15</HeadYaw>
+        </point>
+        <point time="1644415927871441587">
+            <HeadPitch>-4.57</HeadPitch>
+            <HeadYaw>31.11</HeadYaw>
+        </point>
+        <point time="1644415927921815130">
+            <HeadPitch>-5.45</HeadPitch>
+            <HeadYaw>31.82</HeadYaw>
+        </point>
+        <point time="1644415927971306621">
+            <HeadPitch>-6.24</HeadPitch>
+            <HeadYaw>32.43</HeadYaw>
+        </point>
+        <point time="1644415928023028214">
+            <HeadPitch>-7.03</HeadPitch>
+            <HeadYaw>33.05</HeadYaw>
+        </point>
+        <point time="1644415928072582984">
+            <HeadPitch>-8.09</HeadPitch>
+            <HeadYaw>33.75</HeadYaw>
+        </point>
+        <point time="1644415928121759922">
+            <HeadPitch>-9.23</HeadPitch>
+            <HeadYaw>34.63</HeadYaw>
+        </point>
+        <point time="1644415928171377377">
+            <HeadPitch>-10.46</HeadPitch>
+            <HeadYaw>35.33</HeadYaw>
+        </point>
+        <point time="1644415928221633737">
+            <HeadPitch>-11.69</HeadPitch>
+            <HeadYaw>36.12</HeadYaw>
+        </point>
+        <point time="1644415928271454821">
+            <HeadPitch>-12.92</HeadPitch>
+            <HeadYaw>36.83</HeadYaw>
+        </point>
+        <point time="1644415928322927472">
+            <HeadPitch>-13.97</HeadPitch>
+            <HeadYaw>37.53</HeadYaw>
+        </point>
+        <point time="1644415928373066981">
+            <HeadPitch>-14.85</HeadPitch>
+            <HeadYaw>38.41</HeadYaw>
+        </point>
+        <point time="1644415928421611773">
+            <HeadPitch>-15.56</HeadPitch>
+            <HeadYaw>39.29</HeadYaw>
+        </point>
+        <point time="1644415928471423043">
+            <HeadPitch>-16.00</HeadPitch>
+            <HeadYaw>40.34</HeadYaw>
+        </point>
+        <point time="1644415928523154489">
+            <HeadPitch>-16.17</HeadPitch>
+            <HeadYaw>41.40</HeadYaw>
+        </point>
+        <point time="1644415928572708611">
+            <HeadPitch>-16.26</HeadPitch>
+            <HeadYaw>42.45</HeadYaw>
+        </point>
+        <point time="1644415928624778409">
+            <HeadPitch>-16.44</HeadPitch>
+            <HeadYaw>43.42</HeadYaw>
+        </point>
+        <point time="1644415928671396394">
+            <HeadPitch>-16.61</HeadPitch>
+            <HeadYaw>44.47</HeadYaw>
+        </point>
+        <point time="1644415928722008308">
+            <HeadPitch>-16.70</HeadPitch>
+            <HeadYaw>45.53</HeadYaw>
+        </point>
+        <point time="1644415928771403856">
+            <HeadPitch>-16.70</HeadPitch>
+            <HeadYaw>46.58</HeadYaw>
+        </point>
+        <point time="1644415928823582523">
+            <HeadPitch>-16.70</HeadPitch>
+            <HeadYaw>47.37</HeadYaw>
+        </point>
+        <point time="1644415928873067886">
+            <HeadPitch>-16.70</HeadPitch>
+            <HeadYaw>47.90</HeadYaw>
+        </point>
+        <point time="1644415928921197884">
+            <HeadPitch>-16.70</HeadPitch>
+            <HeadYaw>48.43</HeadYaw>
+        </point>
+        <point time="1644415928970633007">
+            <HeadPitch>-16.70</HeadPitch>
+            <HeadYaw>48.78</HeadYaw>
+        </point>
+        <point time="1644415929023508894">
+            <HeadPitch>-16.70</HeadPitch>
+            <HeadYaw>49.13</HeadYaw>
+        </point>
+        <point time="1644415929072573594">
+            <HeadPitch>-16.70</HeadPitch>
+            <HeadYaw>49.31</HeadYaw>
+        </point>
+        <point time="1644415929123282954">
+            <HeadPitch>-16.79</HeadPitch>
+            <HeadYaw>49.31</HeadYaw>
+        </point>
+        <point time="1644415929171781137">
+            <HeadPitch>-16.88</HeadPitch>
+            <HeadYaw>49.31</HeadYaw>
+        </point>
+        <point time="1644415929222233535">
+            <HeadPitch>-17.40</HeadPitch>
+            <HeadYaw>49.31</HeadYaw>
+        </point>
+        <point time="1644415929271964492">
+            <HeadPitch>-18.02</HeadPitch>
+            <HeadYaw>49.31</HeadYaw>
+        </point>
+        <point time="1644415929322191409">
+            <HeadPitch>-18.63</HeadPitch>
+            <HeadYaw>49.31</HeadYaw>
+        </point>
+        <point time="1644415929371865218">
+            <HeadPitch>-18.81</HeadPitch>
+            <HeadYaw>49.31</HeadYaw>
+        </point>
+        <point time="1644415929422236765">
+            <HeadPitch>-18.90</HeadPitch>
+            <HeadYaw>49.31</HeadYaw>
+        </point>
+        <point time="1644415929471579963">
+            <HeadPitch>-19.16</HeadPitch>
+            <HeadYaw>49.31</HeadYaw>
+        </point>
+        <point time="1644415929522300768">
+            <HeadPitch>-19.25</HeadPitch>
+            <HeadYaw>49.31</HeadYaw>
+        </point>
+        <point time="1644415929571985373">
+            <HeadPitch>-19.25</HeadPitch>
+            <HeadYaw>49.31</HeadYaw>
+        </point>
+        <point time="1644415929621912902">
+            <HeadPitch>-19.34</HeadPitch>
+            <HeadYaw>49.31</HeadYaw>
+        </point>
+        <point time="1644415929671563470">
+            <HeadPitch>-19.34</HeadPitch>
+            <HeadYaw>49.31</HeadYaw>
+        </point>
+        <point time="1644415929721773277">
+            <HeadPitch>-19.34</HeadPitch>
+            <HeadYaw>49.31</HeadYaw>
+        </point>
+        <point time="1644415929771435271">
+            <HeadPitch>-19.34</HeadPitch>
+            <HeadYaw>49.22</HeadYaw>
+        </point>
+        <point time="1644415929823098146">
+            <HeadPitch>-19.34</HeadPitch>
+            <HeadYaw>49.13</HeadYaw>
+        </point>
+        <point time="1644415929872617714">
+            <HeadPitch>-19.34</HeadPitch>
+            <HeadYaw>49.04</HeadYaw>
+        </point>
+        <point time="1644415929923445611">
+            <HeadPitch>-19.34</HeadPitch>
+            <HeadYaw>48.87</HeadYaw>
+        </point>
+        <point time="1644415929972683625">
+            <HeadPitch>-19.42</HeadPitch>
+            <HeadYaw>48.69</HeadYaw>
+        </point>
+        <point time="1644415930021806028">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>48.60</HeadYaw>
+        </point>
+        <point time="1644415930072003726">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>48.52</HeadYaw>
+        </point>
+        <point time="1644415930121877110">
+            <HeadPitch>-19.42</HeadPitch>
+            <HeadYaw>48.52</HeadYaw>
+        </point>
+        <point time="1644415930172862693">
+            <HeadPitch>-19.42</HeadPitch>
+            <HeadYaw>48.52</HeadYaw>
+        </point>
+        <point time="1644415930221966246">
+            <HeadPitch>-19.42</HeadPitch>
+            <HeadYaw>48.52</HeadYaw>
+        </point>
+        <point time="1644415930271896852">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>48.34</HeadYaw>
+        </point>
+        <point time="1644415930323615266">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>47.72</HeadYaw>
+        </point>
+        <point time="1644415930373147114">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>47.02</HeadYaw>
+        </point>
+        <point time="1644415930433675105">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>46.14</HeadYaw>
+        </point>
+        <point time="1644415930471956107">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>45.35</HeadYaw>
+        </point>
+        <point time="1644415930521040679">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>44.47</HeadYaw>
+        </point>
+        <point time="1644415930571164692">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>43.42</HeadYaw>
+        </point>
+        <point time="1644415930623777936">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>42.36</HeadYaw>
+        </point>
+        <point time="1644415930673317450">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>41.13</HeadYaw>
+        </point>
+        <point time="1644415930722950131">
+            <HeadPitch>-19.42</HeadPitch>
+            <HeadYaw>39.81</HeadYaw>
+        </point>
+        <point time="1644415930772531220">
+            <HeadPitch>-19.42</HeadPitch>
+            <HeadYaw>38.32</HeadYaw>
+        </point>
+        <point time="1644415930823121768">
+            <HeadPitch>-19.42</HeadPitch>
+            <HeadYaw>36.91</HeadYaw>
+        </point>
+        <point time="1644415930873981388">
+            <HeadPitch>-19.42</HeadPitch>
+            <HeadYaw>35.51</HeadYaw>
+        </point>
+        <point time="1644415930921852113">
+            <HeadPitch>-19.34</HeadPitch>
+            <HeadYaw>34.10</HeadYaw>
+        </point>
+        <point time="1644415930975076077">
+            <HeadPitch>-19.34</HeadPitch>
+            <HeadYaw>32.52</HeadYaw>
+        </point>
+        <point time="1644415931021832417">
+            <HeadPitch>-19.34</HeadPitch>
+            <HeadYaw>31.03</HeadYaw>
+        </point>
+        <point time="1644415931072545892">
+            <HeadPitch>-19.34</HeadPitch>
+            <HeadYaw>29.36</HeadYaw>
+        </point>
+        <point time="1644415931121828947">
+            <HeadPitch>-19.34</HeadPitch>
+            <HeadYaw>27.60</HeadYaw>
+        </point>
+        <point time="1644415931172590126">
+            <HeadPitch>-19.34</HeadPitch>
+            <HeadYaw>25.84</HeadYaw>
+        </point>
+        <point time="1644415931228191712">
+            <HeadPitch>-19.34</HeadPitch>
+            <HeadYaw>24.08</HeadYaw>
+        </point>
+        <point time="1644415931272321157">
+            <HeadPitch>-19.34</HeadPitch>
+            <HeadYaw>22.32</HeadYaw>
+        </point>
+        <point time="1644415931322219246">
+            <HeadPitch>-19.34</HeadPitch>
+            <HeadYaw>20.48</HeadYaw>
+        </point>
+        <point time="1644415931371918503">
+            <HeadPitch>-19.34</HeadPitch>
+            <HeadYaw>18.72</HeadYaw>
+        </point>
+        <point time="1644415931422237072">
+            <HeadPitch>-19.42</HeadPitch>
+            <HeadYaw>16.96</HeadYaw>
+        </point>
+        <point time="1644415931471916088">
+            <HeadPitch>-19.42</HeadPitch>
+            <HeadYaw>15.21</HeadYaw>
+        </point>
+        <point time="1644415931521895047">
+            <HeadPitch>-19.42</HeadPitch>
+            <HeadYaw>13.62</HeadYaw>
+        </point>
+        <point time="1644415931571885822">
+            <HeadPitch>-19.42</HeadPitch>
+            <HeadYaw>11.95</HeadYaw>
+        </point>
+        <point time="1644415931623142869">
+            <HeadPitch>-19.42</HeadPitch>
+            <HeadYaw>10.20</HeadYaw>
+        </point>
+        <point time="1644415931673348494">
+            <HeadPitch>-19.42</HeadPitch>
+            <HeadYaw>8.35</HeadYaw>
+        </point>
+        <point time="1644415931723056732">
+            <HeadPitch>-19.42</HeadPitch>
+            <HeadYaw>6.50</HeadYaw>
+        </point>
+        <point time="1644415931773500449">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>4.66</HeadYaw>
+        </point>
+        <point time="1644415931821896155">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>2.72</HeadYaw>
+        </point>
+        <point time="1644415931871971670">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>0.79</HeadYaw>
+        </point>
+        <point time="1644415931923113273">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>-1.14</HeadYaw>
+        </point>
+        <point time="1644415931973332491">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>-3.16</HeadYaw>
+        </point>
+        <point time="1644415932022225862">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>-5.27</HeadYaw>
+        </point>
+        <point time="1644415932072064694">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>-7.29</HeadYaw>
+        </point>
+        <point time="1644415932122199211">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>-9.32</HeadYaw>
+        </point>
+        <point time="1644415932173562000">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>-11.34</HeadYaw>
+        </point>
+        <point time="1644415932221675635">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>-13.18</HeadYaw>
+        </point>
+        <point time="1644415932273765070">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>-15.12</HeadYaw>
+        </point>
+        <point time="1644415932322269667">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>-17.05</HeadYaw>
+        </point>
+        <point time="1644415932372061758">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>-18.72</HeadYaw>
+        </point>
+        <point time="1644415932422194182">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>-20.30</HeadYaw>
+        </point>
+        <point time="1644415932472030885">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>-21.80</HeadYaw>
+        </point>
+        <point time="1644415932526462607">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>-23.38</HeadYaw>
+        </point>
+        <point time="1644415932572319102">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>-24.79</HeadYaw>
+        </point>
+        <point time="1644415932621507955">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>-26.10</HeadYaw>
+        </point>
+        <point time="1644415932672313858">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>-27.16</HeadYaw>
+        </point>
+        <point time="1644415932723845295">
+            <HeadPitch>-19.51</HeadPitch>
+            <HeadYaw>-28.12</HeadYaw>
+        </point>
+        <point time="1644415932773541443">
+            <HeadPitch>-19.42</HeadPitch>
+            <HeadYaw>-28.92</HeadYaw>
+        </point>
+        <point time="1644415932822387112">
+            <HeadPitch>-19.42</HeadPitch>
+            <HeadYaw>-29.71</HeadYaw>
+        </point>
+        <point time="1644415932872101519">
+            <HeadPitch>-19.42</HeadPitch>
+            <HeadYaw>-30.50</HeadYaw>
+        </point>
+        <point time="1644415932922345850">
+            <HeadPitch>-19.16</HeadPitch>
+            <HeadYaw>-31.38</HeadYaw>
+        </point>
+        <point time="1644415932971632980">
+            <HeadPitch>-18.98</HeadPitch>
+            <HeadYaw>-32.26</HeadYaw>
+        </point>
+        <point time="1644415933021883070">
+            <HeadPitch>-18.54</HeadPitch>
+            <HeadYaw>-32.96</HeadYaw>
+        </point>
+        <point time="1644415933071699108">
+            <HeadPitch>-18.46</HeadPitch>
+            <HeadYaw>-33.57</HeadYaw>
+        </point>
+        <point time="1644415933121791830">
+            <HeadPitch>-18.46</HeadPitch>
+            <HeadYaw>-34.01</HeadYaw>
+        </point>
+        <point time="1644415933171603109">
+            <HeadPitch>-18.28</HeadPitch>
+            <HeadYaw>-34.28</HeadYaw>
+        </point>
+        <point time="1644415933223097900">
+            <HeadPitch>-18.19</HeadPitch>
+            <HeadYaw>-34.45</HeadYaw>
+        </point>
+        <point time="1644415933272900290">
+            <HeadPitch>-17.58</HeadPitch>
+            <HeadYaw>-34.54</HeadYaw>
+        </point>
+        <point time="1644415933321895998">
+            <HeadPitch>-16.70</HeadPitch>
+            <HeadYaw>-34.54</HeadYaw>
+        </point>
+        <point time="1644415933371632517">
+            <HeadPitch>-15.82</HeadPitch>
+            <HeadYaw>-34.54</HeadYaw>
+        </point>
+        <point time="1644415933421342593">
+            <HeadPitch>-15.12</HeadPitch>
+            <HeadYaw>-34.45</HeadYaw>
+        </point>
+        <point time="1644415933471628888">
+            <HeadPitch>-14.41</HeadPitch>
+            <HeadYaw>-34.28</HeadYaw>
+        </point>
+        <point time="1644415933521345612">
+            <HeadPitch>-13.71</HeadPitch>
+            <HeadYaw>-33.93</HeadYaw>
+        </point>
+        <point time="1644415933572100239">
+            <HeadPitch>-12.92</HeadPitch>
+            <HeadYaw>-33.84</HeadYaw>
+        </point>
+        <point time="1644415933620778707">
+            <HeadPitch>-12.13</HeadPitch>
+            <HeadYaw>-33.75</HeadYaw>
+        </point>
+        <point time="1644415933670776003">
+            <HeadPitch>-11.60</HeadPitch>
+            <HeadYaw>-33.57</HeadYaw>
+        </point>
+        <point time="1644415933721404594">
+            <HeadPitch>-10.99</HeadPitch>
+            <HeadYaw>-32.96</HeadYaw>
+        </point>
+        <point time="1644415933771611204">
+            <HeadPitch>-10.20</HeadPitch>
+            <HeadYaw>-32.17</HeadYaw>
+        </point>
+        <point time="1644415933823154569">
+            <HeadPitch>-9.40</HeadPitch>
+            <HeadYaw>-31.38</HeadYaw>
+        </point>
+        <point time="1644415933871679204">
+            <HeadPitch>-8.44</HeadPitch>
+            <HeadYaw>-30.59</HeadYaw>
+        </point>
+        <point time="1644415933920727319">
+            <HeadPitch>-7.29</HeadPitch>
+            <HeadYaw>-29.62</HeadYaw>
+        </point>
+        <point time="1644415933970515080">
+            <HeadPitch>-6.06</HeadPitch>
+            <HeadYaw>-28.30</HeadYaw>
+        </point>
+        <point time="1644415934021474799">
+            <HeadPitch>-4.83</HeadPitch>
+            <HeadYaw>-26.89</HeadYaw>
+        </point>
+        <point time="1644415934071873059">
+            <HeadPitch>-3.69</HeadPitch>
+            <HeadYaw>-25.49</HeadYaw>
+        </point>
+        <point time="1644415934121465359">
+            <HeadPitch>-2.81</HeadPitch>
+            <HeadYaw>-23.91</HeadYaw>
+        </point>
+        <point time="1644415934171343157">
+            <HeadPitch>-2.46</HeadPitch>
+            <HeadYaw>-21.97</HeadYaw>
+        </point>
+        <point time="1644415934221496640">
+            <HeadPitch>-2.02</HeadPitch>
+            <HeadYaw>-19.95</HeadYaw>
+        </point>
+        <point time="1644415934271308625">
+            <HeadPitch>-1.76</HeadPitch>
+            <HeadYaw>-18.02</HeadYaw>
+        </point>
+        <point time="1644415934321599681">
+            <HeadPitch>-1.32</HeadPitch>
+            <HeadYaw>-15.91</HeadYaw>
+        </point>
+        <point time="1644415934371384481">
+            <HeadPitch>-1.23</HeadPitch>
+            <HeadYaw>-13.89</HeadYaw>
+        </point>
+        <point time="1644415934421376335">
+            <HeadPitch>-1.14</HeadPitch>
+            <HeadYaw>-11.78</HeadYaw>
+        </point>
+        <point time="1644415934471284207">
+            <HeadPitch>-1.14</HeadPitch>
+            <HeadYaw>-9.76</HeadYaw>
+        </point>
+        <point time="1644415934521433283">
+            <HeadPitch>-1.14</HeadPitch>
+            <HeadYaw>-8.09</HeadYaw>
+        </point>
+        <point time="1644415934571324434">
+            <HeadPitch>-1.14</HeadPitch>
+            <HeadYaw>-6.68</HeadYaw>
+        </point>
+        <point time="1644415934621502972">
+            <HeadPitch>-1.14</HeadPitch>
+            <HeadYaw>-5.45</HeadYaw>
+        </point>
+        <point time="1644415934671282012">
+            <HeadPitch>-1.14</HeadPitch>
+            <HeadYaw>-4.31</HeadYaw>
+        </point>
+        <point time="1644415934721476254">
+            <HeadPitch>-1.14</HeadPitch>
+            <HeadYaw>-3.43</HeadYaw>
+        </point>
+        <point time="1644415934771286128">
+            <HeadPitch>-1.23</HeadPitch>
+            <HeadYaw>-2.55</HeadYaw>
+        </point>
+        <point time="1644415934821614129">
+            <HeadPitch>-1.32</HeadPitch>
+            <HeadYaw>-1.76</HeadYaw>
+        </point>
+        <point time="1644415934871631445">
+            <HeadPitch>-1.41</HeadPitch>
+            <HeadYaw>-1.05</HeadYaw>
+        </point>
+        <point time="1644415934921399893">
+            <HeadPitch>-1.41</HeadPitch>
+            <HeadYaw>-0.53</HeadYaw>
+        </point>
+        <point time="1644415934971328506">
+            <HeadPitch>-1.58</HeadPitch>
+            <HeadYaw>-0.35</HeadYaw>
+        </point>
+        <point time="1644415935021512915">
+            <HeadPitch>-1.93</HeadPitch>
+            <HeadYaw>-0.18</HeadYaw>
+        </point>
+        <point time="1644415935071303865">
+            <HeadPitch>-2.02</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415935122282162">
+            <HeadPitch>-2.02</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415935171285151">
+            <HeadPitch>-1.93</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415935221491265">
+            <HeadPitch>-1.67</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415935271349418">
+            <HeadPitch>-1.41</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415935321457532">
+            <HeadPitch>-1.41</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415935371835035">
+            <HeadPitch>-1.41</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415935421440078">
+            <HeadPitch>-1.41</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415935471317564">
+            <HeadPitch>-1.49</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415935521573604">
+            <HeadPitch>-1.76</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415935571269553">
+            <HeadPitch>-2.11</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415935621405853">
+            <HeadPitch>-2.20</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415935671342950">
+            <HeadPitch>-2.20</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415935721464768">
+            <HeadPitch>-2.20</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415935771356699">
+            <HeadPitch>-2.20</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415935821404184">
+            <HeadPitch>-2.20</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415935871346799">
+            <HeadPitch>-2.20</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415935921478821">
+            <HeadPitch>-2.20</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415935971343789">
+            <HeadPitch>-2.20</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415936021689811">
+            <HeadPitch>-2.20</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415936071294540">
+            <HeadPitch>-2.20</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415936121426620">
+            <HeadPitch>-2.20</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415936173540803">
+            <HeadPitch>-2.20</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415936220382061">
+            <HeadPitch>-2.20</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415936269922532">
+            <HeadPitch>-2.20</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415936321253681">
+            <HeadPitch>-2.20</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415936371322668">
+            <HeadPitch>-2.20</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+        <point time="1644415936428002946">
+            <HeadPitch>-2.20</HeadPitch>
+            <HeadYaw>-0.00</HeadYaw>
+        </point>
+    </waypoints>
+</gesture>

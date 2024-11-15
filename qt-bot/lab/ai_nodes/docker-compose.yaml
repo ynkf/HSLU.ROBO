@@ -1,0 +1,14 @@
+version: '3'
+services:
+  my_service:
+    # build: .
+    image: ai_nodes-my_service:latest
+    network_mode: host
+    ipc: host
+    volumes:
+      - ./custom:/root/catkin_ws/src/custom
+    extra_hosts:
+      - "QTRD000339.local:192.168.100.1"
+    entrypoint: /root/run.sh # tail -f /dev/null #
+    privileged: true      
+    restart: always

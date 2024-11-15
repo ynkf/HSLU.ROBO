@@ -1,0 +1,60 @@
+# Use the ROS Noetic base image
+FROM ros:noetic
+
+# Install necessary packages
+RUN apt-get update && apt-get install -y \
+    net-tools \
+    nano \
+    git \
+    ros-noetic-cv-bridge \
+    python3-pip \
+    libasound-dev \
+    libportaudio2 \
+    libportaudiocpp0 \
+    portaudio19-dev \
+    wget \
+    ros-noetic-audio-common
+
+# Install Python packages
+RUN python3 -m pip install --user torch torchvision && \
+    python3 -m pip install --user 'git+https://github.com/facebookresearch/detectron2.git' && \
+    python3 -m pip install --upgrade numpy && \
+    python3 -m pip install pyaudio && \
+    python3 -m pip install SpeechRecognition && \
+    python3 -m pip install deepface && \
+    python3 -m pip install tensorflow
+
+# Download weights for Face Detection
+WORKDIR /root/.deepface/weights
+
+RUN wget -O /root/.deepface/weights/age_model_weights.h5 https://github.com/serengil/deepface_models/releases/download/v1.0/age_model_weights.h5 && \
+    wget -O /root/.deepface/weights/gender_model_weights.h5 https://github.com/serengil/deepface_models/releases/download/v1.0/gender_model_weights.h5 && \
+    wget -O /root/.deepface/weights/facial_expression_model_weights.h5 https://github.com/serengil/deepface_models/releases/download/v1.0/facial_expression_model_weights.h5 && \
+    wget -O /root/.deepface/weights/race_model_single_batch.h5 https://github.com/serengil/deepface_models/releases/download/v1.0/race_model_single_batch.h5 && \
+    wget -O /root/.deepface/weights/vgg_face_weights.h5 https://github.com/serengil/deepface_models/releases/download/v1.0/vgg_face_weights.h5
+
+# Setup the catkin workspace
+RUN mkdir -p /root/catkin_ws/src
+WORKDIR /root/catkin_ws
+
+# Clone QTrobot Software repository
+WORKDIR /root
+RUN git clone https://github.com/luxai-qtrobot/software.git
+
+# Create a symbolic link for headers
+RUN ln -s /root/software/headers /root/catkin_ws/src/headers
+
+# Set environment variables and source ROS setup
+ENV ROS_IP=192.168.100.2
+ENV ROS_MASTER_URI=http://192.168.100.1:11311
+ENV CATKIN_SHELL=bash
+RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc && \
+    echo "source /root/catkin_ws/devel/setup.bash" >> ~/.bashrc
+
+# Build the Catkin workspace
+WORKDIR /root/catkin_ws
+RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && catkin_make"
+
+# Copy and make the run.sh script executable (make sure the run.sh file is in the context of the build)
+COPY run.sh /root/
+RUN chmod +x /root/run.sh
