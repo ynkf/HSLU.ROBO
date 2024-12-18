@@ -1,0 +1,5 @@
+<launch>
+  <node name="qt_robot" pkg="qt_robot" type="i_spy.py" output="screen">
+    <param name="param1" value="QTrobot :)" />
+  </node>
+</launch>

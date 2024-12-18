@@ -1,0 +1,204 @@
+bounding_boxes: 
+  - 
+    xmin: 271.10272216796875
+    ymin: 362.509033203125
+    xmax: 450.3200988769531
+    ymax: 476.5468444824219
+    class_id: 63
+    class_name: "laptop"
+  - 
+    xmin: 173.00840759277344
+    ymin: 230.5628662109375
+    xmax: 360.9206237792969
+    ymax: 414.3287048339844
+    class_id: 0
+    class_name: "person"
+  - 
+    xmin: 0.08033531159162521
+    ymin: 199.58995056152344
+    xmax: 116.58888244628906
+    ymax: 479.4765625
+    class_id: 0
+    class_name: "person"
+  - 
+    xmin: 334.3515625
+    ymin: 220.57862854003906
+    xmax: 465.10382080078125
+    ymax: 359.0104064941406
+    class_id: 0
+    class_name: "person"
+  - 
+    xmin: 191.3708953857422
+    ymin: 412.71612548828125
+    xmax: 244.19964599609375
+    ymax: 458.487060546875
+    class_id: 67
+    class_name: "cell phone"
+  - 
+    xmin: 493.85968017578125
+    ymin: 216.3354949951172
+    xmax: 609.4942016601562
+    ymax: 337.36651611328125
+    class_id: 0
+    class_name: "person"
+  - 
+    xmin: 158.41810607910156
+    ymin: 210.1051483154297
+    xmax: 207.15272521972656
+    ymax: 258.4239501953125
+    class_id: 0
+    class_name: "person"
+  - 
+    xmin: 106.14476776123047
+    ymin: 276.64483642578125
+    xmax: 200.59226989746094
+    ymax: 402.483642578125
+    class_id: 56
+    class_name: "chair"
+  - 
+    xmin: 301.545654296875
+    ymin: 226.83009338378906
+    xmax: 326.9429016113281
+    ymax: 247.1519012451172
+    class_id: 63
+    class_name: "laptop"
+  - 
+    xmin: 398.31256103515625
+    ymin: 328.8703918457031
+    xmax: 425.9620056152344
+    ymax: 339.245361328125
+    class_id: 67
+    class_name: "cell phone"
+  - 
+    xmin: 333.4313049316406
+    ymin: 223.7765350341797
+    xmax: 339.587158203125
+    ymax: 246.02293395996094
+    class_id: 39
+    class_name: "bottle"
+  - 
+    xmin: 260.66302490234375
+    ymin: 202.13377380371094
+    xmax: 299.5152282714844
+    ymax: 230.9767303466797
+    class_id: 0
+    class_name: "person"
+  - 
+    xmin: 0.250516414642334
+    ymin: 271.5533447265625
+    xmax: 30.038833618164062
+    ymax: 319.31890869140625
+    class_id: 41
+    class_name: "cup"
+  - 
+    xmin: 75.43045806884766
+    ymin: 250.6636505126953
+    xmax: 135.8607177734375
+    ymax: 265.18963623046875
+    class_id: 56
+    class_name: "chair"
+  - 
+    xmin: 615.581298828125
+    ymin: 249.6038360595703
+    xmax: 631.548095703125
+    ymax: 294.3885803222656
+    class_id: 39
+    class_name: "bottle"
+  - 
+    xmin: 420.64581298828125
+    ymin: 328.30181884765625
+    xmax: 537.7863159179688
+    ymax: 387.619873046875
+    class_id: 63
+    class_name: "laptop"
+  - 
+    xmin: 339.7672119140625
+    ymin: 263.31103515625
+    xmax: 365.44573974609375
+    ymax: 316.6475524902344
+    class_id: 39
+    class_name: "bottle"
+  - 
+    xmin: 181.93338012695312
+    ymin: 237.95143127441406
+    xmax: 214.77783203125
+    ymax: 260.8706359863281
+    class_id: 63
+    class_name: "laptop"
+  - 
+    xmin: 560.7051391601562
+    ymin: 212.72718811035156
+    xmax: 621.1654663085938
+    ymax: 275.1043395996094
+    class_id: 0
+    class_name: "person"
+  - 
+    xmin: 149.7158203125
+    ymin: 241.00404357910156
+    xmax: 160.7913055419922
+    ymax: 259.75238037109375
+    class_id: 41
+    class_name: "cup"
+  - 
+    xmin: 72.4386215209961
+    ymin: 249.86758422851562
+    xmax: 259.5570373535156
+    ymax: 288.1186218261719
+    class_id: 60
+    class_name: "dining table"
+  - 
+    xmin: 527.776611328125
+    ymin: 271.2201843261719
+    xmax: 639.504150390625
+    ymax: 306.6939392089844
+    class_id: 60
+    class_name: "dining table"
+  - 
+    xmin: 203.47584533691406
+    ymin: 188.776611328125
+    xmax: 240.64646911621094
+    ymax: 258.3377380371094
+    class_id: 77
+    class_name: "teddy bear"
+  - 
+    xmin: 503.82611083984375
+    ymin: 277.7491455078125
+    xmax: 638.5188598632812
+    ymax: 367.26861572265625
+    class_id: 60
+    class_name: "dining table"
+  - 
+    xmin: 568.2941284179688
+    ymin: 195.62890625
+    xmax: 593.1583862304688
+    ymax: 218.3415985107422
+    class_id: 0
+    class_name: "person"
+  - 
+    xmin: 520.3455200195312
+    ymin: 327.49169921875
+    xmax: 541.813720703125
+    ymax: 363.4330139160156
+    class_id: 41
+    class_name: "cup"
+  - 
+    xmin: 232.3837127685547
+    ymin: 200.4622039794922
+    xmax: 257.6142883300781
+    ymax: 241.8579559326172
+    class_id: 0
+    class_name: "person"
+  - 
+    xmin: 70.89864349365234
+    ymin: 237.8349151611328
+    xmax: 350.6029052734375
+    ymax: 292.7160339355469
+    class_id: 60
+    class_name: "dining table"
+  - 
+    xmin: 204.7967987060547
+    ymin: 189.6239776611328
+    xmax: 243.210205078125
+    ymax: 255.61866760253906
+    class_id: 0
+    class_name: "person"
